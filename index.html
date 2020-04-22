@@ -153,7 +153,7 @@
         $("textarea").attr('maxlength', maxChar);
       });
 
-      $("textarea").on('keyup input', function(event) {
+      $("textarea").on('keypress input', function(event) {
         var answer=this.value.length;
         $("#count-p").text('Letter Count: '+answer);
         var remainChar=maxChar-answer;
