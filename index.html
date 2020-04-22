@@ -93,7 +93,7 @@
     <div class="landing-page">
       <h1 class="wow fadeIn" data-wow-delay="1s">Letter<br>Counter</h1>
         <div class="firstDiv">
-          <textarea class="form-control mb-3" id="exampleFormControlTextarea1" rows="3" onkeyup="countchar(this)" maxlength="5" placeholder="Your text here"></textarea>
+          <textarea class="form-control mb-3" id="exampleFormControlTextarea1" rows="3" maxlength="5" placeholder="Your text here"></textarea>
           <p id="count-p">Letter Count:</p>
           <p id="remaining-p">Max character:</p><br><br>
           <center><a id="change" class="btn btn-outline-dark" href="#">change max character!</a></center>
@@ -124,12 +124,12 @@
         $("textarea").attr('maxlength', maxChar);
       });
 
-      function countchar(pass){
-        var answer=pass.value.length;
+      $("textarea").on('keyup input', function(event) {
+        var answer=this.value.length;
         $("#count-p").text('Letter Count: '+answer);
         var remainChar=maxChar-answer;
         $("#remaining-p").text('Remaining: '+remainChar);
-      }
+      });
       $("textarea").attr('maxlength', maxChar);
       
       
