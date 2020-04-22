@@ -55,12 +55,16 @@
       text-decoration: none;
       color:#fff; 
     }
+    #mob-warning{
+      display: none;
+    }
     #footer{
       margin:130px auto 0 auto;
       color:  #545454;
     }
     @media(max-width:700px){
       .landing-page{
+
         padding-bottom: 100px !important;
         
       }
@@ -78,8 +82,11 @@
       top: 73%;
       margin-top:22px;
     }
+    #mob-warning{
+      opacity: 0.5;
+    }
     #footer{
-      margin:100px auto 0 auto;
+      margin:60px auto 0 auto;
       width:100%;
     }
 }
@@ -96,6 +103,7 @@
           <p id="count-p">Letter Count:</p>
           <p id="remaining-p">Max character:</p><br><br>
           <center><a id="change" class="btn btn-outline-dark" href="#">change max character!</a></center>
+          <center><p id="mob-warning" class="mt-4">⚠ Press space to slice at max point.</p></center>
         </div>
         <center><p id="footer">Handcrafted by @ashutoshbisoyi</p></center>
     </div>
@@ -114,6 +122,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <script type="text/javascript">
+
+      $(document).ready(function () {
+        $(window).on("resize", function (e) {
+            checkScreenSize();
+        });
+
+        checkScreenSize();
+
+        function checkScreenSize(){
+            var newWindowWidth = $(window).width();
+            if (newWindowWidth < 800) {
+                $("#change").on('click', function(event) {
+                  $("#mob-warning").css('display', 'block');
+                });
+            }
+            else
+            {
+               
+            }
+        }
+      });
+
       var maxChar=280;
       $("#remaining-p").text('Remaining: '+maxChar);
 
