@@ -8,7 +8,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="animate.css">
     <style type="text/css">
       *{
       margin: 0;
@@ -66,13 +65,21 @@
       color:  #545454;
     }
     @media(max-width:700px){
-      .btn{
-        margin-top:75%;
-        padding:10px 50px;
-      }
       .landing-page h1{
         font-size: 4em;
       }
+      .firstDiv{
+      width:90%;
+    }
+    #change{
+      width:65% !important;
+      color:#333333;
+      font-size: 1em;
+      top: 73%;
+    }
+    #footer{
+      width:65%;
+    }
 }
     </style>
     <title>Background-Changer</title>
@@ -86,7 +93,7 @@
           <textarea class="form-control mb-3" id="exampleFormControlTextarea1" rows="3" onkeyup="countchar(this)" maxlength="5" placeholder="Your text here"></textarea>
           <p id="count-p">Letter Count:</p>
           <p id="remaining-p">Max character:</p><br><br>
-          <a id="change" href="#">change max character!</a>
+          <a id="change" class="btn btn-outline-dark" href="#">change max character!</a>
         </div>
         <p id="footer">Handcrafted by @ashutoshbisoyi</p>
     </div>
@@ -103,10 +110,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="wow.min.js"></script>
-              <script>
-              new WOW().init();
-              </script>
 
     <script type="text/javascript">
       var maxChar=280;
