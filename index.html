@@ -61,7 +61,7 @@
     }
     @media(max-width:700px){
       .landing-page{
-        height:130vh;
+        height:150vh;
         padding-bottom: 100px !important;
         
       }
@@ -85,7 +85,7 @@
     }
 }
     </style>
-    <title>Background-Changer</title>
+    <title>Letter Counter</title>
   </head>
   <body class="wow slideInDown">
 
@@ -132,6 +132,10 @@
       });
       $("textarea").attr('maxlength', maxChar);
       
+      var isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1; //&& ua.indexOf("mobile");
+      if(isAndroid) {
+    document.write('<meta name="viewport" content="width=device-width,height='+window.innerHeight+', initial-scale=1.0">');
+}
       
       
       
