@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="animate.css">
+    <style type="text/css">
+      *{
+      margin: 0;
+      padding: 0;
+      touch-action:manipulation;
+    }
+    .landing-page{
+      height: 100vh;
+      width:100%;
+      background-color: #00adb5;
+    } 
+    .landing-page h1{
+      padding-top: 50px;
+      font-size: 5em;
+      color:#333333;
+      font-family: 'Anton', sans-serif;
+      text-align: center;
+      opacity:0.9;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .firstDiv{
+      width:40%;
+      margin: 100px auto 2px auto;
+    }
+    .firstDiv textarea:focus{
+      outline: none;
+      box-shadow: none;
+    }
+    #count-p{
+      float: left;
+    }
+    #remaining-p{
+      float: right;
+    }
+    #change{
+      width: 15% !important;
+      color:#333333;
+      font-size: 1.1em;
+      text-align: center;
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    #change:hover{
+      text-decoration: none;
+      color:#fff; 
+    }
+    #footer{
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color:  #545454;
+    }
+    @media(max-width:700px){
+      .btn{
+        margin-top:75%;
+        padding:10px 50px;
+      }
+      .landing-page h1{
+        font-size: 4em;
+      }
+}
+    </style>
+    <title>Background-Changer</title>
+  </head>
+  <body class="wow slideInDown">
+
+
+    <div class="landing-page">
+      <h1 class="wow fadeIn" data-wow-delay="1s">Letter<br>Counter</h1>
+        <div class="firstDiv">
+          <textarea class="form-control mb-3" id="exampleFormControlTextarea1" rows="3" onkeyup="countchar(this)" maxlength="5" placeholder="Your text here"></textarea>
+          <p id="count-p">Letter Count:</p>
+          <p id="remaining-p">Max character:</p><br><br>
+          <a id="change" href="#">change max character!</a>
+        </div>
+        <p id="footer">Handcrafted by @ashutoshbisoyi</p>
+    </div>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="wow.min.js"></script>
+              <script>
+              new WOW().init();
+              </script>
+
+    <script type="text/javascript">
+      var maxChar=280;
+      $("#remaining-p").text('Remaining: '+maxChar);
+
+      $("#change").on('click', function(event) {
+         maxChar=prompt("Enter max character");
+        $("#remaining-p").text('Remaining: '+maxChar);
+        $("textarea").attr('maxlength', maxChar);
+      });
+
+      function countchar(pass){
+        var answer=pass.value.length;
+        $("#count-p").text('Letter Count: '+answer);
+        var remainChar=maxChar-answer;
+        $("#remaining-p").text('Remaining: '+remainChar);
+      }
+      $("textarea").attr('maxlength', maxChar);
+      
+      
+      
+      
+    </script>
+  </body>
+</html>
